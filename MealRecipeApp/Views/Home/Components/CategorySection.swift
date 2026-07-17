@@ -1,15 +1,10 @@
-////
-////  CategorySection.swift
-////  MealRecipeApp
-////
-////  Created by RASHID on 11/07/2026.
-////
 //
 //import SwiftUI
 //
 //struct CategorySection: View {
 //
 //    let categories: [MealCategory]
+//    let onCategorySelected: (MealCategory) -> Void
 //
 //    @State private var selectedCategory: String?
 //
@@ -24,11 +19,8 @@
 //
 //                Spacer()
 //
-//                Button("See All") {
-//
-//                }
-//                .font(.subheadline)
-//                .foregroundStyle(.orange)
+//                Button("See All") { }
+//                    .foregroundStyle(.orange)
 //
 //            }
 //
@@ -42,7 +34,10 @@
 //                            title: category.strCategory,
 //                            isSelected: selectedCategory == category.strCategory
 //                        ) {
+//
 //                            selectedCategory = category.strCategory
+//                            onCategorySelected(category)
+//
 //                        }
 //
 //                    }
@@ -54,10 +49,7 @@
 //        }
 //
 //    }
-//}
 //
-//#Preview {
-//    CategorySection(categories: [])
 //}
 
 import SwiftUI
@@ -80,8 +72,16 @@ struct CategorySection: View {
 
                 Spacer()
 
-                Button("See All") { }
-                    .foregroundStyle(.orange)
+                NavigationLink {
+
+                    CategoryView()
+
+                } label: {
+
+                    Text("See All")
+                        .foregroundStyle(.orange)
+
+                }
 
             }
 

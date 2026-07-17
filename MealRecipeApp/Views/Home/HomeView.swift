@@ -13,8 +13,6 @@ struct HomeView: View {
     @StateObject
     private var viewModel = HomeViewModel()
     
-    
-   // @State private var showProfile = false
     @Binding var selectedTab: TabItem
 
     var body: some View {
@@ -38,14 +36,6 @@ struct HomeView: View {
 
                         }
                     )
-//                    HomeHeader(
-//                        onNotificationTap: {
-//
-//                        },
-//                        onProfileTap: {
-//                            selectedTab = .profile
-//                        }
-//                    )
 
                     //MARK: Search Bar
                     SearchBar(
@@ -64,6 +54,8 @@ struct HomeView: View {
                     if let meal = viewModel.featuredMeal {
                         FeaturedMealCard(meal: meal)
                     }
+                    
+                    //MARK: Latest Recipes
 
                     LatestMealSection(
                         meals: viewModel.latestMeals

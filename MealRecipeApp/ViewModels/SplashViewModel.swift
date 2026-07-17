@@ -16,7 +16,7 @@ final class SplashViewModel: ObservableObject {
         completion: @escaping (Bool) -> Void
     ) {
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 
             let isLoggedIn =
                 AuthenticationManager.shared.getCurrentUser() != nil

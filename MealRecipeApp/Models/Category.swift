@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MealCategory: Codable, Identifiable {
+struct MealCategory: Codable, Identifiable, Equatable {
 
     let idCategory: String
     let strCategory: String
@@ -17,4 +17,5 @@ struct MealCategory: Codable, Identifiable {
     var id: String {
         idCategory
     }
+
 }
